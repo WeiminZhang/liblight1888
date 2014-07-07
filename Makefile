@@ -20,8 +20,11 @@ clean:
 
 install: $(SOLIBS)
 	install -d /usr/local/include/light1888
+	install -d /usr/local/lib/pkgconfig
 	install ./*.h /usr/local/include/light1888/
 	install $(SOLIBS) /usr/local/lib/
+	install ./light1888.pc /usr/local/lib/pkgconfig
+	ldconfig
 
 uninstall:
 	rm -rf /usr/local/include/light1888

@@ -1,0 +1,10 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir={exec_prefix}/lib
+includedir=${prefix}/include/light1888
+
+Name: Light1888
+Description: The Lightweight IEEE1888 Protocol Stack
+Libs: -L${libdir} -llight1888
+CFlags: -I${includedir}
+Version: 1
