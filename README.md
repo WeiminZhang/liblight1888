@@ -5,6 +5,7 @@
 * Split headers to public and private
 
 # authors
-Hideya Ochiai
-Hiroyuki Ikegami
+
+* Hideya Ochiai
+* Hiroyuki Ikegami
 
