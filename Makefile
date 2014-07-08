@@ -1,5 +1,5 @@
 SOLIBS = liblight1888.so
-OBJS = ieee1888_XMLgenerator.o ieee1888_XMLparser.o ieee1888_server.o ieee1888_client.o ieee1888_object_factory.o ieee1888_util.o
+OBJS = ieee1888_XMLgenerator.o ieee1888_XMLparser.o ieee1888_server.o ieee1888_client.o ieee1888_object_factory.o ieee1888_util.o ieee1888_datapool.o
 LIBPTHREAD = -lpthread
 
 .PHONY: all clean install
