@@ -1,3 +1,32 @@
+/*
+ * Copyright (c) 2013 Hideya Ochiai, the University of Tokyo,  All rights reserved.
+ * 
+ * Permission of redistribution and use in source and binary forms, 
+ * with or without modification, are granted, free of charge, to any person 
+ * obtaining the copy of this software under the following conditions:
+ * 
+ *  1. Any copies of this source code must include the above copyright notice,
+ *  this permission notice and the following statement without modification 
+ *  except possible additions of other copyright notices. 
+ * 
+ *  2. Redistributions of the binary code must involve the copy of the above 
+ *  copyright notice, this permission notice and the following statement 
+ *  in documents and/or materials provided with the distribution.  
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+/**
+ * ieee1888_util.c
+ *  author: Hideya Ochiai
+ *  update: 2013-10-16
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -187,181 +216,181 @@ void ieee1888_dump_objects_impl(ieee1888_object* obj, int indent){
   case IEEE1888_DATATYPE_KEY:
     {
       ieee1888_key* key=(ieee1888_key*)obj;
-      printf(indent_buffer); printf("key {\n");
+      printf("%s",indent_buffer); printf("key {\n");
       if(key->id==NULL){
-        printf(next_indent_buffer); printf("id : null\n");
+        printf("%s",next_indent_buffer); printf("id : null\n");
       }else{
-        printf(next_indent_buffer); printf("id : \"%s\"\n",key->id);
+        printf("%s",next_indent_buffer); printf("id : \"%s\"\n",key->id);
       }
       if(key->attrName==NULL){
-        printf(next_indent_buffer); printf("attrName : null\n");
+        printf("%s",next_indent_buffer); printf("attrName : null\n");
       }else{
-        printf(next_indent_buffer); printf("attrName : \"%s\"\n",key->attrName);
+        printf("%s",next_indent_buffer); printf("attrName : \"%s\"\n",key->attrName);
       }
       if(key->eq==NULL){
-        printf(next_indent_buffer); printf("eq : null\n");
+        printf("%s",next_indent_buffer); printf("eq : null\n");
       }else{
-        printf(next_indent_buffer); printf("eq : \"%s\"\n",key->eq);
+        printf("%s",next_indent_buffer); printf("eq : \"%s\"\n",key->eq);
       }
       if(key->neq==NULL){
-        printf(next_indent_buffer); printf("neq : null\n");
+        printf("%s",next_indent_buffer); printf("neq : null\n");
       }else{
-        printf(next_indent_buffer); printf("neq : \"%s\"\n",key->neq);
+        printf("%s",next_indent_buffer); printf("neq : \"%s\"\n",key->neq);
       }
       if(key->lt==NULL){
-        printf(next_indent_buffer); printf("lt : null\n");
+        printf("%s",next_indent_buffer); printf("lt : null\n");
       }else{
-        printf(next_indent_buffer); printf("lt : \"%s\"\n",key->lt);
+        printf("%s",next_indent_buffer); printf("lt : \"%s\"\n",key->lt);
       }
       if(key->gt==NULL){
-        printf(next_indent_buffer); printf("gt : null\n");
+        printf("%s",next_indent_buffer); printf("gt : null\n");
       }else{
-        printf(next_indent_buffer); printf("gt : \"%s\"\n",key->gt);
+        printf("%s",next_indent_buffer); printf("gt : \"%s\"\n",key->gt);
       }
       if(key->lteq==NULL){
-        printf(next_indent_buffer); printf("lteq : null\n");
+        printf("%s",next_indent_buffer); printf("lteq : null\n");
       }else{
-        printf(next_indent_buffer); printf("lteq : \"%s\"\n",key->lteq);
+        printf("%s",next_indent_buffer); printf("lteq : \"%s\"\n",key->lteq);
       }
       if(key->gteq==NULL){
-        printf(next_indent_buffer); printf("gteq : null\n");
+        printf("%s",next_indent_buffer); printf("gteq : null\n");
       }else{
-        printf(next_indent_buffer); printf("gteq : \"%s\"\n",key->gteq);
+        printf("%s",next_indent_buffer); printf("gteq : \"%s\"\n",key->gteq);
       }
       if(key->select==NULL){
-        printf(next_indent_buffer); printf("select : null\n");
+        printf("%s",next_indent_buffer); printf("select : null\n");
       }else{
-        printf(next_indent_buffer); printf("select : \"%s\"\n",key->select);
+        printf("%s",next_indent_buffer); printf("select : \"%s\"\n",key->select);
       }
       if(key->trap==NULL){
-        printf(next_indent_buffer); printf("trap : null\n");
+        printf("%s",next_indent_buffer); printf("trap : null\n");
       }else{
-        printf(next_indent_buffer); printf("trap : \"%s\"\n",key->trap);
+        printf("%s",next_indent_buffer); printf("trap : \"%s\"\n",key->trap);
       }
       
-      printf(indent_buffer); printf("}\n");
+      printf("%s",indent_buffer); printf("}\n");
     }
     break;
 
   case IEEE1888_DATATYPE_OK:
     {
       // ieee1888_OK* OK=(ieee1888_OK*)obj;
-      printf(indent_buffer); printf("OK {\n");
-      printf(indent_buffer); printf("}\n");
+      printf("%s",indent_buffer); printf("OK {\n");
+      printf("%s",indent_buffer); printf("}\n");
     }
     break;
 
   case IEEE1888_DATATYPE_ERROR:
     {
       ieee1888_error* error=(ieee1888_error*)obj;
-      printf(indent_buffer); printf("error {\n");
+      printf("%s",indent_buffer); printf("error {\n");
       if(error->type==NULL){
-        printf(next_indent_buffer); printf("type : null\n");
+        printf("%s",next_indent_buffer); printf("type : null\n");
       }else{
-        printf(next_indent_buffer); printf("type : \"%s\"\n",error->type);
+        printf("%s",next_indent_buffer); printf("type : \"%s\"\n",error->type);
       }
       if(error->content==NULL){
-        printf(next_indent_buffer); printf("content : null\n");
+        printf("%s",next_indent_buffer); printf("content : null\n");
       }else{
-        printf(next_indent_buffer); printf("content : \"%s\"\n",error->content);
+        printf("%s",next_indent_buffer); printf("content : \"%s\"\n",error->content);
       }
-      printf(indent_buffer); printf("}\n");
+      printf("%s",indent_buffer); printf("}\n");
     }
     break;
 
   case IEEE1888_DATATYPE_QUERY:
     {
       ieee1888_query* query=(ieee1888_query*)obj;
-      printf(indent_buffer); printf("query {\n");
+      printf("%s",indent_buffer); printf("query {\n");
       if(query->id==NULL){
-        printf(next_indent_buffer); printf("id : null\n");
+        printf("%s",next_indent_buffer); printf("id : null\n");
       }else{
-        printf(next_indent_buffer); printf("id : \"%s\"\n",query->id);
+        printf("%s",next_indent_buffer); printf("id : \"%s\"\n",query->id);
       }
       if(query->type==NULL){
-        printf(next_indent_buffer); printf("type : null\n");
+        printf("%s",next_indent_buffer); printf("type : null\n");
       }else{
-        printf(next_indent_buffer); printf("type : \"%s\"\n",query->type);
+        printf("%s",next_indent_buffer); printf("type : \"%s\"\n",query->type);
       }
       if(query->cursor==NULL){
-        printf(next_indent_buffer); printf("cursor : null\n");
+        printf("%s",next_indent_buffer); printf("cursor : null\n");
       }else{
-        printf(next_indent_buffer); printf("cursor : \"%s\"\n",query->cursor);
+        printf("%s",next_indent_buffer); printf("cursor : \"%s\"\n",query->cursor);
       }
-      printf(next_indent_buffer); printf("ttl : %ld\n",query->ttl);
-      printf(next_indent_buffer); printf("acceptableSize : %ld\n",query->acceptableSize);
+      printf("%s",next_indent_buffer); printf("ttl : %ld\n",query->ttl);
+      printf("%s",next_indent_buffer); printf("acceptableSize : %ld\n",query->acceptableSize);
       if(query->callbackData==NULL){
-        printf(next_indent_buffer); printf("callbackData : null\n");
+        printf("%s",next_indent_buffer); printf("callbackData : null\n");
       }else{
-        printf(next_indent_buffer); printf("callbackData : \"%s\"\n",query->callbackData);
+        printf("%s",next_indent_buffer); printf("callbackData : \"%s\"\n",query->callbackData);
       }
       if(query->callbackControl==NULL){
-        printf(next_indent_buffer); printf("callbackControl : null\n");
+        printf("%s",next_indent_buffer); printf("callbackControl : null\n");
       }else{
-        printf(next_indent_buffer); printf("callbackControl : \"%s\"\n",query->callbackControl);
+        printf("%s",next_indent_buffer); printf("callbackControl : \"%s\"\n",query->callbackControl);
       }
 
       for(i=0;i<query->n_key;i++){
         ieee1888_dump_objects_impl((ieee1888_object*)(((ieee1888_key*)(query->key))+i),indent+2);
       }
 
-      printf(indent_buffer); printf("}\n");
+      printf("%s",indent_buffer); printf("}\n");
     }
     break;
 
   case IEEE1888_DATATYPE_HEADER:
     {
       ieee1888_header* header=(ieee1888_header*)obj;
-      printf(indent_buffer); printf("header {\n");
+      printf("%s",indent_buffer); printf("header {\n");
       ieee1888_dump_objects_impl((ieee1888_object*)header->OK,indent+2);
       ieee1888_dump_objects_impl((ieee1888_object*)header->error,indent+2);
       ieee1888_dump_objects_impl((ieee1888_object*)header->query,indent+2);
-      printf(indent_buffer); printf("}\n");
+      printf("%s",indent_buffer); printf("}\n");
     }
     break;
 
   case IEEE1888_DATATYPE_VALUE:
     {
       ieee1888_value* value=(ieee1888_value*)obj;
-      printf(indent_buffer); printf("value {\n");
+      printf("%s",indent_buffer); printf("value {\n");
       if(value->time==NULL){
-      	printf(next_indent_buffer); printf("time : null\n");
+      	printf("%s",next_indent_buffer); printf("time : null\n");
       }else{
-      	printf(next_indent_buffer); printf("time : %s\n",value->time);
+      	printf("%s",next_indent_buffer); printf("time : %s\n",value->time);
       }
       if(value->content==NULL){
-        printf(next_indent_buffer); printf("content : null\n");
+        printf("%s",next_indent_buffer); printf("content : null\n");
       }else{
-        printf(next_indent_buffer); printf("content : \"%s\"\n",value->content);
+        printf("%s",next_indent_buffer); printf("content : \"%s\"\n",value->content);
       }
-      printf(indent_buffer); printf("}\n");
+      printf("%s",indent_buffer); printf("}\n");
     }
     break;
 
   case IEEE1888_DATATYPE_POINT:
     {
       ieee1888_point* point=(ieee1888_point*)obj;
-      printf(indent_buffer); printf("point {\n");
+      printf("%s",indent_buffer); printf("point {\n");
       if(point->id==NULL){
-        printf(next_indent_buffer); printf("id : null\n");
+        printf("%s",next_indent_buffer); printf("id : null\n");
       }else{
-        printf(next_indent_buffer); printf("id : \"%s\"\n",point->id);
+        printf("%s",next_indent_buffer); printf("id : \"%s\"\n",point->id);
       }
       for(i=0;i<point->n_value;i++){
         ieee1888_dump_objects_impl((ieee1888_object*)(((ieee1888_value*)(point->value))+i),indent+2);
       }
-      printf(indent_buffer); printf("}\n");
+      printf("%s",indent_buffer); printf("}\n");
     }
     break;
 
   case IEEE1888_DATATYPE_POINTSET:
     {
       ieee1888_pointSet* pointSet=(ieee1888_pointSet*)obj;
-      printf(indent_buffer); printf("pointSet {\n");
+      printf("%s",indent_buffer); printf("pointSet {\n");
       if(pointSet->id==NULL){
-        printf(next_indent_buffer); printf("id : null\n");
+        printf("%s",next_indent_buffer); printf("id : null\n");
       }else{
-        printf(next_indent_buffer); printf("id : \"%s\"\n",pointSet->id);
+        printf("%s",next_indent_buffer); printf("id : \"%s\"\n",pointSet->id);
       }
       for(i=0;i<pointSet->n_pointSet;i++){
         ieee1888_dump_objects_impl((ieee1888_object*)(((ieee1888_pointSet*)(pointSet->pointSet))+i),indent+2);
@@ -369,7 +398,7 @@ void ieee1888_dump_objects_impl(ieee1888_object* obj, int indent){
       for(i=0;i<pointSet->n_point;i++){
         ieee1888_dump_objects_impl((ieee1888_object*)(((ieee1888_point*)(pointSet->point))+i),indent+2);
       }
-      printf(indent_buffer); printf("}\n");
+      printf("%s",indent_buffer); printf("}\n");
     }
     break;
 
@@ -377,24 +406,24 @@ void ieee1888_dump_objects_impl(ieee1888_object* obj, int indent){
   case IEEE1888_DATATYPE_BODY:
     {
       ieee1888_body* body=(ieee1888_body*)obj;
-      printf(indent_buffer); printf("body {\n");
+      printf("%s",indent_buffer); printf("body {\n");
        for(i=0;i<body->n_pointSet;i++){
         ieee1888_dump_objects_impl((ieee1888_object*)(((ieee1888_pointSet*)body->pointSet)+i),indent+2);
       }
       for(i=0;i<body->n_point;i++){
         ieee1888_dump_objects_impl((ieee1888_object*)(((ieee1888_point*)(body->point))+i),indent+2);
       }
-      printf(indent_buffer); printf("}\n");
+      printf("%s",indent_buffer); printf("}\n");
     }
     break;
 
   case IEEE1888_DATATYPE_TRANSPORT:
     {
       ieee1888_transport* transport=(ieee1888_transport*)obj;
-      printf(indent_buffer); printf("transport {\n");
+      printf("%s",indent_buffer); printf("transport {\n");
       ieee1888_dump_objects_impl((ieee1888_object*)transport->header,indent+2);
       ieee1888_dump_objects_impl((ieee1888_object*)transport->body,indent+2);
-      printf(indent_buffer); printf("}\n");
+      printf("%s",indent_buffer); printf("}\n");
     }
     break;
 

@@ -1,14 +1,13 @@
-SOLIBS = liblight1888.so
+CC = gcc # if you want to do cross-compile, please change this environment
+SOLIB = liblight1888.so
 OBJS = ieee1888_XMLgenerator.o ieee1888_XMLparser.o ieee1888_server.o ieee1888_client.o ieee1888_object_factory.o ieee1888_util.o ieee1888_datapool.o
 LIBPTHREAD = -lpthread
 
-.PHONY: all clean install
-
-# OBJS = IEEE1888UploadAgent.o GEmuNet.o GEmuNet-to-1888.o
+.PHONY: all clean install uninstall
 
 all: $(SOLIBS)
 
-$(SOLIBS): $(OBJS)
+$(SOLIB): $(OBJS)
 	$(CC) -shared -g -Wall $(LDFLAGS) -o $@ $(OBJS) $(LDLIBS) $(LIBPTHREAD)
 
 clean: 

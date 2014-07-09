@@ -1,9 +1,33 @@
 /*
+ * Copyright (c) 2013 Hideya Ochiai, the University of Tokyo,  All rights reserved.
+ * 
+ * Permission of redistribution and use in source and binary forms, 
+ * with or without modification, are granted, free of charge, to any person 
+ * obtaining the copy of this software under the following conditions:
+ * 
+ *  1. Any copies of this source code must include the above copyright notice,
+ *  this permission notice and the following statement without modification 
+ *  except possible additions of other copyright notices. 
+ * 
+ *  2. Redistributions of the binary code must involve the copy of the above 
+ *  copyright notice, this permission notice and the following statement 
+ *  in documents and/or materials provided with the distribution.  
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+/**
  * ieee1888_client.c
  *
  * author: Hideya Ochiai
  * create: 2011-11-30
- * update: 2012-12-08
+ * update: 2013-10-16
  */
 
 #include <stdio.h>
@@ -87,11 +111,9 @@ int ieee1888_soap_client(const char* soapEPR, const char* send_msg, char* recv_m
   free(buffer);
 
   // for debug
-  /*
-  printf("host: %s\n",host);
-  printf("port: %d\n",port);
-  printf("dir:  %s\n",dir);
-  */
+  // printf("host: %s\n",host);
+  // printf("port: %d\n",port);
+  // printf("dir:  %s\n",dir);
   /* ---- Step 1 : parse soapEPR (end) ---- */
   
   /* ---- Step 2 : create connection to the server (begin) ---- */
@@ -114,12 +136,12 @@ int ieee1888_soap_client(const char* soapEPR, const char* send_msg, char* recv_m
   sopt.service=str_port;
 
   memset(&hints, 0, sizeof(hints));
-  hints.ai_family=PF_UNSPEC;
+  hints.ai_family=PF_UNSPEC; // Modified by Hiroyuki Ikegami 2013-09
   hints.ai_socktype=SOCK_STREAM;
 
   err=getaddrinfo(sopt.host, sopt.service, &hints, &res0);
   if(err){
-    fprintf(stderr,"ERROR: getaddrinfo(%d): %s\n", err, gai_strerror(err)); fflush(stderr);
+    fprintf(stderr,"ERROR: getaddrinfo(%d): %s\n", err, gai_strerror(err)); fflush(stderr); // Modified by Hiroyuki Ikegami 2013-09
     // free & return 
     free(host); free(dir);
     return IEEE1888_SOAP_CLIENT_IMPL_ERROR_DNS_RESOLVE;
